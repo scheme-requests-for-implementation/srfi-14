@@ -168,6 +168,25 @@ You can access the discussion via <A HREF=mail-archive/maillist.html>the archive
 <LI>Revised: 2000/06/09
 <LI>Revised: 2000/12/23
 </UL>
+<a name="PostFinalizationNote1"></a>
+<p><b>Post-finalization note 1 (2019):</b>
+The tables in the
+<a href="#StandardCharsetDefs">
+Unicode, Latin-1 and ASCII definitions of the standard character sets</a>
+section below reflect Java 1.0, which in turn reflects Unicode 2.0.
+Unicode's definitions of these groups of characters has been
+substantially revised and updated since then, although the ASCII and Latin-1
+definitions are frozen and will always be correct.</p>
+
+<p>This note recommends that implementers of new implementations and
+maintainers of existing ones update their implementations to use
+the current Unicode definitions, as detailed in
+<a href="contrib/unicode-2019/CharsetDefs.html">
+the supplementary CharsetDefinitions file</a>.
+Software to assist in this task may be present in the
+<a href="contrib/unicode-2019">
+contrib/unicode-2019</a> directory of the repository.
+</p>
 
 <!--========================================================================-->
 <h1>Table of contents</H1>
@@ -1251,7 +1270,13 @@ and Posix to newer, Unicode-influenced "letter/digit" lexemes.
 </h1>
 <p>
 In Unicode Scheme implementations, the base character sets are compatible with
-Java's Unicode specifications. For ASCII or Latin-1, we simply restrict the
+Java's Unicode specifications.
+[<i>2019 note:  However, implementers of Unicode are urged to see
+<a href="#PostFinalizationNote1">Post-Finalization Note 1</a>
+if they have not already done so,
+and then skip the rest of this section.</i>]
+
+<p>For ASCII or Latin-1, we simply restrict the
 Unicode set specifications to their first 128 or 256 codes, respectively.
 Scheme implementations that are not based on ASCII, Latin-1 or Unicode should
 attempt to preserve the sense or spirit of these definitions.
