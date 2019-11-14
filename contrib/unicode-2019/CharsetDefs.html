@@ -33,7 +33,7 @@ into one of thirty classes.  For example, <code>Lu</code> means "upper case lett
 and <code>Sm</code> means "mathematical symbol".
 The <a href="https://www.unicode.org/Public/UNIDATA/PropList.txt">PropList.txt</a> and
 <a href="https://www.unicode.org/Public/UNIDATA/DerivedCoreProperties.txt">
-DerivedCoreProperties</a> files
+DerivedCoreProperties.txt</a> files
 provide various properties of either single Unicode characters or ranges of them.
 For example, the property <code>Deprecated</code> applies to the characters whose existence
 is the result of a mistake or whose use is strongly discouraged.  Characters
@@ -71,7 +71,14 @@ Field 2 is Unicode's standard name for the property.</p>
 <h2>Definitions of the sets</h2>
 <p>Each set is defined as the union of
 specified general categories, properties, other character sets, single codepoints,
-and ranges of codepoints (using the <code>..</code> notation of PropList.txt).</p>
+and ranges of codepoints (using the <code>..</code> notation of PropList.txt).
+</p>
+<p>The definitions are based on entries in DerivedCoreProperties.txt,
+chapter 2 of the Unicode Standard, and other places, with some help from
+the C/C++/Posix definitions.  Unicode uses the term <i>graphic characters</i>
+to include whitespace, but here we follow Posix and call them
+<i>printable characters</i>, restricting the former term to exclude whitespace.
+</p>
 <p>The notation <code>L*</code> is not a specific category, but
 represents the union of all categories beginning with <code>L</code>,
 namely <code>Ll Lu Lo Lt Lm</code>, and similarly for all other category codes.
@@ -100,7 +107,7 @@ char-set:iso-control  = 0000..001F + 007F..009F
 
 char-set:punctuation  = category P*
 
-char-set:symbol       =  category S*
+char-set:symbol      =  category S*
 
 char-set:hex-digit    = 0030..0039 + 0041..0046 + 0061..0066
 
