@@ -11,7 +11,7 @@
 <body>
 <h1>SRFI 14 Charset Definitions</h1>
 <h2>Introduction</h2>
-<p>This page provides modern definitions of the standard <a href=
+<p>This document provides modern definitions of the standard <a href=
 "http://srfi.schemers.org/srfi-14/srfi-14.html">SRFI 14</a>
 character sets in terms of Unicode properties. The definitions in
 the published SRFI were taken from Java 1.0, which means they
@@ -71,7 +71,7 @@ to category Lo.</p>
 <p>The format of PropList.txt and DerivedCoreProperties.txt is more
 complicated but more flexible. Comments beginning with
 <code>#</code> may appear on any line and go to the end of the
-line; a line beginning with <code>#</code> is a comment All such
+line; a line beginning with <code>#</code> is a comment. All such
 comments, as well as blank lines, should be completely ignored.
 Spaces within lines should also be discarded.</p>
 <p>After that, the files contain two fields separated by
@@ -84,7 +84,7 @@ standard name for the property.</p>
 categories, properties, other character sets, single codepoints,
 and ranges of codepoints (using the <code>..</code> notation of
 PropList.txt).</p>
-<p>The definitions are based on entries in
+<p>The definitions are based on comments in
 DerivedCoreProperties.txt, chapter 2 of the Unicode Standard, and
 other places, with some help from the C/C++/Posix definitions.
 Unicode uses the term <i>graphic characters</i> to include
@@ -109,10 +109,10 @@ char-set:digit        = category Nd
 
 char-set:letter+digit = property Alphabetic + category Nd
 
-char-set:graphic      = char-set:printing + char-set:whitespace
-
-char-set:printing     = category L* + category N* + category + category M*
+char-set:graphic      = category L* + category N* + category + category M*
                         category S* + category P*
+
+char-set:printing     = char-set:graphic + char-set:whitespace
 
 char-set:whitespace   = property White_Space
 
