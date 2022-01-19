@@ -18,7 +18,8 @@
     <title>SRFI 14: Character-set Library</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/srfi.css" type="text/css" />
+    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
+    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
     <!-- Should have a media=all to get, for example, printing to work.
       == But my Netscape will completely ignore the tag if I do that.
       -->
@@ -34,8 +35,8 @@
 
            div.inset { margin-left: +5%; }
 
-           h1 { margin-left: -5%; }
-           h1, h2 { clear: both; }
+           h2 { margin-left: -5%; }
+           h2, h3 { clear: both; }
            h1, h2, h3, h4, h5, h6 { color: blue }
            div.title-text { font-size: large; font-weight: bold; }
 	   h3 { margin-top: 2em; margin-bottom: 0em }
@@ -148,16 +149,11 @@
 <body>
 
 <!--========================================================================-->
-<H1>Title</H1>
+<h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>14: Character-set Library</h1>
 
-<div class=title-text>Character-set Library</div>
+<p>by Olin Shivers</p>
 
-<!--========================================================================-->
-<H1>Author</H1>
-
-Olin Shivers
-
-<H1>Status</H1>
+<h2 id="status">Status</h2>
 
 <p>This SRFI is currently in <em>final</em> status.  Here is <a href="https://srfi.schemers.org/srfi-process.html">an explanation</a> of each status that a SRFI can hold.  To provide input on this SRFI, please send email to <code><a href="mailto:srfi+minus+14+at+srfi+dotschemers+dot+org">srfi-14@<span class="antispam">nospam</span>srfi.schemers.org</a></code>.  To subscribe to the list, follow <a href="https://srfi.schemers.org/srfi-list-subscribe.html">these instructions</a>.  You can access previous messages via the mailing list <a href="https://srfi-email.schemers.org/srfi-14">archive</a>.</p>
 <UL>
@@ -198,7 +194,7 @@ contrib/unicode-2019</a> directory of the repository.
 -->
 
 <!--========================================================================-->
-<h1>Table of contents</H1>
+<h2>Table of contents</h2>
 
 <!-- A bug in netscape (?) keeps the first link in this UL from being active.
 ==== So the Abstract link be dead. 99/8/22 -Olin
@@ -230,7 +226,7 @@ contrib/unicode-2019</a> directory of the repository.
 </ul>
 
 <!--========================================================================-->
-<h1><a name="Abstract">Abstract</a></H1>
+<h2 id="Abstract">Abstract</h2>
 <p>
 
 The ability to efficiently represent and manipulate sets of characters is an
@@ -256,7 +252,7 @@ Several forthcoming SRFIs can be defined in terms of this one:
 
 
 <!--========================================================================-->
-<h1><a name="VariableIndex">Variable Index</a></h1>
+<h2 id="VariableIndex">Variable Index</h2>
 <p>
 Here is the complete set of bindings -- procedural and otherwise --
 exported by this library. In a Scheme system that has a module or package 
@@ -328,7 +324,7 @@ char-set-filter!</a> <a href="#ucs-range->char-set!">ucs-range->char-set!</a>
 </div>
 
 <!--========================================================================-->
-<h1><a name="Rationale">Rationale</a></h1>
+<h2 id="Rationale">Rationale</h2>
 
 <p>
 The ability to efficiently manipulate sets of characters is quite
@@ -345,7 +341,7 @@ in the Unicode case (see the definition of <code>char-set:whitespace</code> for 
 single real deviation).
 
 <!--========================================================================-->
-<h2><a name="LinearUpdateOperations">Linear-update operations</a></h2>
+<h2 id="LinearUpdateOperations">Linear-update operations</h2>
 
 <p>
 The procedures of this SRFI, by default, are "pure functional" -- they do not
@@ -412,7 +408,7 @@ type checker or run-time mechanism for detecting violations. (But
 sophisticated programming environments, such as DrScheme, might help.)
 
 <!--========================================================================-->
-<h2><a name="ExtraSRFI">Extra-SRFI recommendations</a></h2>
+<h2 id="ExtraSRFI">Extra-SRFI recommendations</h2>
 <p>
 Users are cautioned that the R5RS predicates 
 <div class=inset><code>
@@ -441,7 +437,7 @@ major confusion.
 
 
 <!--========================================================================-->
-<h1><a name="Specification">Specification</a></h1>
+<h2 id="Specification">Specification</h2>
 <p>
 In the following procedure specifications:
 <ul>
@@ -500,7 +496,7 @@ and zero or more optional parameters (<var>dict<sub>2</sub> ...</var>).
 
 
 <!--========================================================================-->
-<h2><a name="GeneralProcs">General procedures</a></h2>
+<h2 id="GeneralProcs">General procedures</h2>
 <dl>
 
 <!--
@@ -623,7 +619,7 @@ with
 </dl>
 
 <!--========================================================================-->
-<h2><a name="Iterating">Iterating over character sets</a></h2>
+<h2 id="Iterating">Iterating over character sets</h2>
 
 <dl>
 <!--
@@ -829,7 +825,7 @@ with
 
 
 <!--========================================================================-->
-<h2><a name="Creating">Creating character sets</a></h2>
+<h2 id="Creating">Creating character sets</h2>
 <dl>
 
 <!--
@@ -1002,7 +998,7 @@ with
 </dl>
 
 <!--========================================================================-->
-<h2><a name="Querying">Querying character sets</a></h2>
+<h2 id="Querying">Querying character sets</h2>
 <dl>
 
 <!--
@@ -1087,7 +1083,7 @@ with
 </dl>
 
 <!--========================================================================-->
-<h2><a name="Algebra">Character-set algebra</a></h2>
+<h2 id="Algebra">Character-set algebra</h2>
 <dl>
 
 <!--
@@ -1195,7 +1191,7 @@ with
 </dl>
 
 <!--========================================================================-->
-<h2><a name="StandardCharsets">Standard character sets</a></h2>
+<h2 id="StandardCharsets">Standard character sets</h2>
 <p>
 Several character sets are predefined for convenience:
 <a name="char-set:lower-case"></a>
@@ -1274,9 +1270,9 @@ terms found in
 and Posix to newer, Unicode-influenced "letter/digit" lexemes.
 
 <!--========================================================================-->
-<h1><a name="StandardCharsetDefs">
+<h2 id="StandardCharsetDefs">
     Unicode, Latin-1 and ASCII definitions of the standard character sets</a>
-</h1>
+</h2>
 <p>
 In Unicode Scheme implementations, the base character sets are compatible with
 Java's Unicode specifications.
@@ -1315,7 +1311,7 @@ two-letter category specified in the the third field, which is referenced
 frequently in the descriptions below.
 
 <!--========================================================================-->
-<h2><a name="lower-case-def">char-set:lower-case</a></h2>
+<h2 id="lower-case-def">char-set:lower-case</h2>
 <p>
 For Unicode, we follow Java's specification: a character is lowercase if
 <ul>
@@ -1416,7 +1412,7 @@ the spec enumerates a list of characters in the Latin-1 subset; this list
 excludes U+00B5 MICRO SIGN, which is included in both of the previous specs.) 
 
 <!--========================================================================-->
-<h2><a name="upper-case-def">char-set:upper-case</a></h2>
+<h2 id="upper-case-def">char-set:upper-case</h2>
 <p>
 For Unicode, we follow Java's specification: a character is uppercase if
 <ul>
@@ -1474,7 +1470,7 @@ Latin-1 adds another 30 upper-case characters to the ASCII set:
 </table>
 </div>
 <!--========================================================================-->
-<h2><a name="title-case-def">char-set:title-case</a></h2>
+<h2 id="title-case-def">char-set:title-case</h2>
 <p>
 In Unicode, a character is titlecase if it has the category Lt in
 the character attribute database. There are very few of these characters;
@@ -1550,7 +1546,7 @@ There are no ASCII or Latin-1 titlecase characters.
 
 
 <!--========================================================================-->
-<h2><a name="letter-def">char-set:letter</a></h2>
+<h2 id="letter-def">char-set:letter</h2>
 <p>
 In Unicode, a letter is any character with one of the letter categories
 (Lu, Ll, Lt, Lm, Lo) in the Unicode character database. 
@@ -1576,7 +1572,7 @@ plus
 Java or SRFI 14.)
 
 <!--========================================================================-->
-<h2><a name="digit-def">char-set:digit</a></h2>
+<h2 id="digit-def">char-set:digit</h2>
 
 <p>
 In Unicode, a character is a digit if it has the category Nd in
@@ -1587,18 +1583,18 @@ digits.
 
 
 <!--========================================================================-->
-<h2><a name="hex-digit-def">char-set:hex-digit</a></h2>
+<h2 id="hex-digit-def">char-set:hex-digit</h2>
 <p>
 The only hex digits are 0123456789abcdefABCDEF.
 
 
 <!--========================================================================-->
-<h2><a name="letter+digit-def">char-set:letter+digit</a></h2>
+<h2 id="letter+digit-def">char-set:letter+digit</h2>
 <p>
 The union of <code>char-set:letter</code> and <code>char-set:digit.</code>
 
 <!--========================================================================-->
-<h2><a name="graphic-def">char-set:graphic</a></h2>
+<h2 id="graphic-def">char-set:graphic</h2>
 <p>
 A graphic character is one that would put ink on paper. The ASCII and Latin-1
 graphic characters are the members of
@@ -1612,14 +1608,14 @@ graphic characters are the members of
 </div>
 
 <!--========================================================================-->
-<h2><a name="printing-def">char-set:printing</a></h2>
+<h2 id="printing-def">char-set:printing</h2>
 <p>
 A printing character is one that would occupy space when printed, <em>i.e.</em>,
 a graphic character or a space character. <code>char-set:printing</code> is the union
 of <code>char-set:whitespace</code> and <code>char-set:graphic.</code>
 
 <!--========================================================================-->
-<h2><a name="whitespace-def">char-set:whitespace</a></h2>
+<h2 id="whitespace-def">char-set:whitespace</h2>
 <p>
 In Unicode, a whitespace character is either
 <ul>
@@ -1694,7 +1690,7 @@ union of <code>char-set:graphic</code> and <code>char-set:whitespace.</code>
 
 
 <!--========================================================================-->
-<h2><a name="iso-control-def">char-set:iso-control</a></h2>
+<h2 id="iso-control-def">char-set:iso-control</h2>
 <p>
 The ISO control characters are the Unicode/Latin-1 characters in the ranges
 [U+0000,U+001F] and [U+007F,U+009F].
@@ -1710,7 +1706,7 @@ compatible with the Java <code>IsISOControl()</code> method.
 
 
 <!--========================================================================-->
-<h2><a name="punctuation-def">char-set:punctuation</a></h2>
+<h2 id="punctuation-def">char-set:punctuation</h2>
 <p>
 In Unicode, a punctuation character is any character that has one of the
 punctuation categories in the Unicode character database (Pc, Pd, Ps,
@@ -1740,7 +1736,7 @@ punctuation. They are "symbols."
 
 
 <!--========================================================================-->
-<h2><a name="symbol-def">char-set:symbol</a></h2>
+<h2 id="symbol-def">char-set:symbol</h2>
 <p>
 In Unicode, a symbol is any character that has one of the symbol categories
 in the Unicode character database (Sm, Sc, Sk, or So). There
@@ -1774,7 +1770,7 @@ Latin-1 adds 18 more:
 </div>
 
 <!--========================================================================-->
-<h2><a name="blank-def">char-set:blank</a></h2>
+<h2 id="blank-def">char-set:blank</h2>
 
 <p>
 Blank chars are horizontal whitespace. In Unicode, a blank character is either
@@ -1818,7 +1814,7 @@ compatibility issues.
 
 
 <!--========================================================================-->
-<h1><a name="ReferenceImp">Reference implementation</a></h1>
+<h2 id="ReferenceImp">Reference implementation</h2>
 <p>
 This SRFI comes with a reference implementation. It resides at:
 <div class=inset>
@@ -1881,7 +1877,7 @@ dense 32-byte bit set.
 
 
 <!--========================================================================-->
-<h1><a name="Acknowledgements">Acknowledgements</a></h1>
+<h2 id="Acknowledgements">Acknowledgements</h2>
 <p>
 The design of this library benefited greatly from the feedback provided during
 the SRFI discussion phase. Among those contributing thoughtful commentary and
@@ -1911,7 +1907,7 @@ by Mike Sperber, who is the editor for the SRFI, and by Hillary Sullivan,
 who is not.
 
 <!--========================================================================-->
-<h1><a name="Links">References &amp; links</a></h1>
+<h2 id="Links">References &amp; links</h2>
 
 <dl>
 <dt class=biblio><strong><a name="Java">[Java]</a></strong>
@@ -1991,7 +1987,7 @@ who is not.
 </dl>
 
 <!--========================================================================-->
-<h1><a name="Copyright">Copyright</a></h1>
+<h2 id="copyright">Copyright</h2>
 
 <p>
 Certain portions of this document -- the specific, marked segments of text
