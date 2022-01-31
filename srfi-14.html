@@ -11,12 +11,12 @@
 <!--========================================================================-->
 <html lang="en-US">
   <head>
-    <meta name="keywords" content="Scheme, programming language, list processing, SRFI" />
-    <link rev="made" href="mailto:shivers@ai.mit.edu" />
+    <meta content="Scheme, programming language, list processing, SRFI" name="keywords" />
+    <link href="mailto:shivers@ai.mit.edu" rev="made" />
     <title>SRFI 14: Character-set Library</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://srfi.schemers.org/srfi.css" type="text/css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://srfi.schemers.org/srfi.css" rel="stylesheet" type="text/css" />
     <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png" />
     <!-- Should have a media=all to get, for example, printing to work.
       == But my Netscape will completely ignore the tag if I do that.
@@ -114,7 +114,7 @@
            a.draft { color: red; }
            /*]]>*/
     </style>
-    <style type="text/css" media="all">
+    <style media="all" type="text/css">
            /*<![CDATA[*/
            /* Nastiness: Here, I'm using a bug to work around a bug.
            ** Netscape rendering bugs mean you need bogus <dt> and <dd>
@@ -147,7 +147,7 @@
   </head>
 <body>
 <!--========================================================================-->
-<h1><a href="https://srfi.schemers.org/"><img class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" alt="SRFI surfboard logo" /></a>14: Character-set Library</h1>
+<h1><a href="https://srfi.schemers.org/"><img alt="SRFI surfboard logo" class="srfi-logo" src="https://srfi.schemers.org/srfi-logo.svg" /></a>14: Character-set Library</h1>
 
 <p>by Olin Shivers</p>
 
@@ -267,7 +267,7 @@ system, these procedures should be contained in a module named "char-set-lib".
 </dt>
 <dd class="proc-index">
 <pre class="proc-index">
-<a href="#char-set-p">char-set?</a> <a href="#char-set=">char-set=</a> <a href="#char-set&lt;=">char-set&lt;=</a> <a href="#char-set-hash">char-set-hash</a>
+<a href="#char-set-p">char-set?</a> <a href="#char-set%3D">char-set=</a> <a href="#char-set%3C%3D">char-set&lt;=</a> <a href="#char-set-hash">char-set-hash</a>
 </pre>
 </dd>
 <dt class="proc-index"> Iterating over character sets
@@ -285,20 +285,20 @@ system, these procedures should be contained in a module named "char-set-lib".
 <pre class="proc-index">
 <a href="#char-set-copy">char-set-copy</a> <a href="#char-set">char-set</a>
 
-<a href="#list-&gt;char-set">list-&gt;char-set</a>  <a href="#string-&gt;char-set">string-&gt;char-set</a>
-<a href="#list-&gt;char-set!">list-&gt;char-set!</a> <a href="#string-&gt;char-set!">string-&gt;char-set!</a>
+<a href="#list-%3Echar-set">list-&gt;char-set</a>  <a href="#string-%3Echar-set">string-&gt;char-set</a>
+<a href="#list-%3Echar-set!">list-&gt;char-set!</a> <a href="#string-%3Echar-set!">string-&gt;char-set!</a>
     
-<a href="#char-set-filter">char-set-filter</a>  <a href="#ucs-range-&gt;char-set">ucs-range-&gt;char-set</a> <a href="#char-set-filter!">
-char-set-filter!</a> <a href="#ucs-range-&gt;char-set!">ucs-range-&gt;char-set!</a>
+<a href="#char-set-filter">char-set-filter</a>  <a href="#ucs-range-%3Echar-set">ucs-range-&gt;char-set</a> <a href="#char-set-filter!">
+char-set-filter!</a> <a href="#ucs-range-%3Echar-set!">ucs-range-&gt;char-set!</a>
 
-<a href="#-&gt;char-set">-&gt;char-set</a>
+<a href="#-%3Echar-set">-&gt;char-set</a>
 </pre>
 </dd>
 <dt class="proc-index"> Querying character sets
 </dt>
 <dd class="proc-index">
 <pre class="proc-index">
-<a href="#char-set-&gt;list">char-set-&gt;list</a> <a href="#char-set-&gt;string">char-set-&gt;string</a>
+<a href="#char-set-%3Elist">char-set-&gt;list</a> <a href="#char-set-%3Estring">char-set-&gt;string</a>
 <a href="#char-set-size">char-set-size</a> <a href="#char-set-count">char-set-count</a> <a href="#char-set-contains-p">char-set-contains?</a>
 <a href="#char-set-every">char-set-every</a> <a href="#char-set-any">char-set-any</a>
 </pre>
@@ -313,20 +313,20 @@ char-set-filter!</a> <a href="#ucs-range-&gt;char-set!">ucs-range-&gt;char-set!<
 <a href="#char-set-complement">char-set-complement</a>  <a href="#char-set-union">char-set-union</a>  <a href="#char-set-intersection">char-set-intersection</a>
 <a href="#char-set-complement!">char-set-complement!</a> <a href="#char-set-union!">char-set-union!</a> <a href="#char-set-intersection!">char-set-intersection!</a>
 
-<a href="#char-set-difference">char-set-difference</a>  <a href="#char-set-xor">char-set-xor</a>  <a href="#char-set-diff+intersection">char-set-diff+intersection</a>
-<a href="#char-set-difference!">char-set-difference!</a> <a href="#char-set-xor!">char-set-xor!</a> <a href="#char-set-diff+intersection!">char-set-diff+intersection!</a>
+<a href="#char-set-difference">char-set-difference</a>  <a href="#char-set-xor">char-set-xor</a>  <a href="#char-set-diff%2Bintersection">char-set-diff+intersection</a>
+<a href="#char-set-difference!">char-set-difference!</a> <a href="#char-set-xor!">char-set-xor!</a> <a href="#char-set-diff%2Bintersection!">char-set-diff+intersection!</a>
 </pre>
 </dd>
 <dt class="proc-index"> Standard character sets
 </dt>
 <dd class="proc-index">
 <pre class="proc-index">
-<a href="#char-set:lower-case">char-set:lower-case</a>  <a href="#char-set:upper-case">char-set:upper-case</a>  <a href="#char-set:title-case">char-set:title-case</a>
-<a href="#char-set:letter">char-set:letter</a>      <a href="#char-set:digit">char-set:digit</a>       <a href="#char-set:letter+digit">char-set:letter+digit</a>
-<a href="#char-set:graphic">char-set:graphic</a>     <a href="#char-set:printing">char-set:printing</a>    <a href="#char-set:whitespace">char-set:whitespace</a>
-<a href="#char-set:iso-control">char-set:iso-control</a> <a href="#char-set:punctuation">char-set:punctuation</a> <a href="#char-set:symbol">char-set:symbol</a>
-<a href="#char-set:hex-digit">char-set:hex-digit</a>   <a href="#char-set:blank">char-set:blank</a>       <a href="#char-set:ascii">char-set:ascii</a>
-<a href="#char-set:empty">char-set:empty</a>       <a href="#char-set:full">char-set:full</a>
+<a href="#char-set%3Alower-case">char-set:lower-case</a>  <a href="#char-set%3Aupper-case">char-set:upper-case</a>  <a href="#char-set%3Atitle-case">char-set:title-case</a>
+<a href="#char-set%3Aletter">char-set:letter</a>      <a href="#char-set%3Adigit">char-set:digit</a>       <a href="#char-set%3Aletter%2Bdigit">char-set:letter+digit</a>
+<a href="#char-set%3Agraphic">char-set:graphic</a>     <a href="#char-set%3Aprinting">char-set:printing</a>    <a href="#char-set%3Awhitespace">char-set:whitespace</a>
+<a href="#char-set%3Aiso-control">char-set:iso-control</a> <a href="#char-set%3Apunctuation">char-set:punctuation</a> <a href="#char-set%3Asymbol">char-set:symbol</a>
+<a href="#char-set%3Ahex-digit">char-set:hex-digit</a>   <a href="#char-set%3Ablank">char-set:blank</a>       <a href="#char-set%3Aascii">char-set:ascii</a>
+<a href="#char-set%3Aempty">char-set:empty</a>       <a href="#char-set%3Afull">char-set:full</a>
 </pre>
 
 </dd>
@@ -663,16 +663,16 @@ with
 <!--
 ==== char-set-cursor char-set-ref char-set-cursor-next end-of-char-set?
 ============================================================================-->
-<dt id="char-set-cursor" class="proc-def1">
+<dt class="proc-def1" id="char-set-cursor">
 <code class="proc-def">char-set-cursor</code><var> cset -&gt; cursor</var>
 </dt>
-<dt id="char-set-ref" class="proc-defi">
+<dt class="proc-defi" id="char-set-ref">
 <code class="proc-def">char-set-ref</code><var> cset cursor -&gt; char</var>
 </dt>
-<dt id="char-set-cursor-next" class="proc-defi">
+<dt class="proc-defi" id="char-set-cursor-next">
 <code class="proc-def">char-set-cursor-next</code><var> cset cursor -&gt; cursor</var>
 </dt>
-<dt id="end-of-char-set-p" class="proc-defn">
+<dt class="proc-defn" id="end-of-char-set-p">
 <code class="proc-def">end-of-char-set?</code><var> cursor -&gt; boolean</var>
 </dt>
 <dd class="proc-def">
@@ -779,10 +779,10 @@ with
 <!--
 ==== char-set-unfold char-set-unfold!
 ============================================================================-->
-<dt id="char-set-unfold" class="proc-def1">
+<dt class="proc-def1" id="char-set-unfold">
 <code class="proc-def">char-set-unfold&nbsp;</code><var> f p g seed [base-cs] -&gt; char-set</var>
 </dt>
-<dt id="char-set-unfold!" class="proc-defn"><code class="proc-def">char-set-unfold!</code><var> f p g seed base-cs -&gt; char-set</var>
+<dt class="proc-defn" id="char-set-unfold!"><code class="proc-def">char-set-unfold!</code><var> f p g seed base-cs -&gt; char-set</var>
 </dt>
 <dd class="proc-def">
 <p>
@@ -833,7 +833,7 @@ with
 <!--
 ==== char-set-for-each
 ============================================================================-->
-<dt id="char-set-for-each" class="proc-def">
+<dt class="proc-def" id="char-set-for-each">
 <code class="proc-def">char-set-for-each</code><var> proc cs -&gt; unspecified</var>
 </dt>
 <dd class="proc-def">
@@ -858,7 +858,7 @@ with
 <!--
 ==== char-set-map
 ============================================================================-->
-<dt id="char-set-map" class="proc-def">
+<dt class="proc-def" id="char-set-map">
 <code class="proc-def">char-set-map</code><var> proc cs -&gt; char-set</var>
 </dt>
 <dd class="proc-def">
@@ -886,7 +886,7 @@ with
 <!--
 ==== char-set-copy
 ============================================================================-->
-<dt id="char-set-copy" class="proc-def">
+<dt class="proc-def" id="char-set-copy">
 <code class="proc-def">char-set-copy</code><var> cs -&gt; char-set</var>
 </dt>
 <dd class="proc-def">
@@ -905,7 +905,7 @@ with
 <!--
 ==== char-set
 ============================================================================-->
-<dt id="char-set" class="proc-def">
+<dt class="proc-def" id="char-set">
 <code class="proc-def">char-set</code><var> char<sub>1</sub> ... -&gt; char-set</var>
 </dt>
 <dd class="proc-def">
@@ -916,10 +916,10 @@ with
 <!--
 ==== list->char-set list->char-set
 ============================================================================-->
-<dt id="list-&gt;char-set" class="proc-def1">
+<dt class="proc-def1" id="list-&gt;char-set">
 <code class="proc-def">list-&gt;char-set&nbsp;</code><var> char-list [base-cs] -&gt; char-set</var>
 </dt>
-<dt id="list-&gt;char-set!" class="proc-defn"><code class="proc-def">list-&gt;char-set!</code><var> char-list base-cs -&gt; char-set</var>
+<dt class="proc-defn" id="list-&gt;char-set!"><code class="proc-def">list-&gt;char-set!</code><var> char-list base-cs -&gt; char-set</var>
 </dt>
 <dd class="proc-def">
 <p>
@@ -1274,18 +1274,18 @@ with
 ==== char-set-complement! char-set-union! char-set-intersection! 
 ==== char-set-difference! char-set-xor! char-set-diff+intersection!
 ============================================================================-->
-<dt id="char-set-complement!" class="proc-def1">
+<dt class="proc-def1" id="char-set-complement!">
 <code class="proc-def">char-set-complement!</code><var> cs                     -&gt; char-set</var>
 </dt>
-<dt id="char-set-union!" class="proc-defi"><code class="proc-def">char-set-union!</code><var>  cs<sub>1</sub> cs<sub>2</sub> ...                   -&gt; char-set</var>
+<dt class="proc-defi" id="char-set-union!"><code class="proc-def">char-set-union!</code><var>  cs<sub>1</sub> cs<sub>2</sub> ...                   -&gt; char-set</var>
 </dt>
-<dt id="char-set-intersection!" class="proc-defi"><code class="proc-def">char-set-intersection!</code><var>  cs<sub>1</sub> cs<sub>2</sub> ...          -&gt; char-set</var>
+<dt class="proc-defi" id="char-set-intersection!"><code class="proc-def">char-set-intersection!</code><var>  cs<sub>1</sub> cs<sub>2</sub> ...          -&gt; char-set</var>
 </dt>
-<dt id="char-set-difference!" class="proc-defi"><code class="proc-def">char-set-difference!</code><var>  cs<sub>1</sub> cs<sub>2</sub> ...            -&gt; char-set</var>
+<dt class="proc-defi" id="char-set-difference!"><code class="proc-def">char-set-difference!</code><var>  cs<sub>1</sub> cs<sub>2</sub> ...            -&gt; char-set</var>
 </dt>
-<dt id="char-set-xor!" class="proc-defi"><code class="proc-def">char-set-xor!</code><var>  cs<sub>1</sub> cs<sub>2</sub> ...                   -&gt; char-set</var>
+<dt class="proc-defi" id="char-set-xor!"><code class="proc-def">char-set-xor!</code><var>  cs<sub>1</sub> cs<sub>2</sub> ...                   -&gt; char-set</var>
 </dt>
-<dt id="char-set-diff+intersection!" class="proc-defn"><code class="proc-def">char-set-diff+intersection!</code><var>  cs<sub>1</sub> cs<sub>2</sub> cs<sub>3</sub> ... -&gt; [char-set char-set]</var>
+<dt class="proc-defn" id="char-set-diff+intersection!"><code class="proc-def">char-set-diff+intersection!</code><var>  cs<sub>1</sub> cs<sub>2</sub> cs<sub>3</sub> ... -&gt; [char-set char-set]</var>
 </dt>
 <dd class="proc-def">
 <p>
@@ -1550,7 +1550,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 Latin-1 adds another 30 upper-case characters to the ASCII set:
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td>00C0</td> <td>LATIN CAPITAL LETTER A WITH GRAVE</td></tr>
 <tr><td>00C1</td> <td>LATIN CAPITAL LETTER A WITH ACUTE</td></tr>
 <tr><td>00C2</td> <td>LATIN CAPITAL LETTER A WITH CIRCUMFLEX</td></tr>
@@ -1591,7 +1591,7 @@ the character attribute database. There are very few of these characters;
 here is the entire 31-character list as of Unicode 3.0:
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td>01C5 </td><td nowrap="nowrap"> LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON
 </td></tr>
 <tr><td>01C8 </td><td nowrap="nowrap"> LATIN CAPITAL LETTER L WITH SMALL LETTER J
@@ -1679,7 +1679,7 @@ members of the Latin-1 <code>char-set:lower-case</code> and <code>char-set:upper
 plus
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td>00AA</td> <td>FEMININE ORDINAL INDICATOR</td></tr>
 <tr><td>00BA</td> <td>MASCULINE ORDINAL INDICATOR</td></tr>
 </table>
@@ -1717,7 +1717,7 @@ A graphic character is one that would put ink on paper. The ASCII and Latin-1
 graphic characters are the members of
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td><code>char-set:letter</code></td></tr>
 <tr><td><code>char-set:digit</code></td></tr>
 <tr><td><code>char-set:punctuation</code></td></tr>
@@ -1757,7 +1757,7 @@ In Unicode, a whitespace character is either
 There are 24 whitespace characters in Unicode 3.0:
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td>0009</td> <td>HORIZONTAL TABULATION </td> <td>  \t control-I</td></tr>
 <tr><td>000A</td> <td>LINE FEED         </td> <td> \n control-J</td></tr>
 <tr><td>000B</td> <td>VERTICAL TABULATION       </td> <td> \v control-K</td></tr>
@@ -1794,7 +1794,7 @@ Posix <code>isspace()</code> procedure. Latin-1 adds the no-break space.
 Note: Java's <code>isWhitespace()</code> method is incompatible, including
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td>0009</td> <td>HORIZONTAL TABULATION </td> <td>  (\t control-I)</td></tr>
 <tr><td>001C</td> <td>FILE SEPARATOR   </td> <td> (control-\)</td></tr>
 <tr><td>001D</td> <td>GROUP SEPARATOR  </td> <td>(control-])</td></tr>
@@ -1806,7 +1806,7 @@ Note: Java's <code>isWhitespace()</code> method is incompatible, including
 and excluding
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td>00A0</td> <td>NO-BREAK SPACE</td></tr>
 </table>
 </div>
@@ -1850,7 +1850,7 @@ ASCII has 23 punctuation characters:
 Latin-1 adds six more:
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td>00A1 </td> <td> INVERTED EXCLAMATION MARK
 </td></tr><tr><td>00AB </td> <td> LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
 </td></tr><tr><td>00AD </td> <td> SOFT HYPHEN
@@ -1879,7 +1879,7 @@ $+&lt;=&gt;^`|~
 Latin-1 adds 18 more:
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td>00A2 </td> <td> CENT SIGN </td></tr>
 <tr><td>00A3 </td> <td> POUND SIGN </td></tr>
 <tr><td>00A4 </td> <td> CURRENCY SIGN </td></tr>
@@ -1919,7 +1919,7 @@ Blank chars are horizontal whitespace. In Unicode, a blank character is either
 There are eighteen blank characters in Unicode 3.0:
 </p>
 <div class="inset">
-<table cellspacing="0" cellpadding="0">
+<table cellpadding="0" cellspacing="0">
 <tr><td>0009 </td> <td> HORIZONTAL TABULATION   </td> <td> \t control-I </td></tr>
 <tr><td>0020 </td> <td> SPACE                   </td> <td> Zs </td></tr>
 <tr><td>00A0 </td> <td> NO-BREAK SPACE  </td> <td> Zs </td></tr>
