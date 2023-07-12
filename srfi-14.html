@@ -160,6 +160,14 @@
   <li>Revised: 2000-04-30</li>
   <li>Revised: 2000-06-09</li>
   <li>Revised: 2000-12-23</li>
+  <li>Revised to fix errata:
+    <ul>
+      <li>2023-07-11 (Fixed the order of arguments
+        to <a href="#char-set-unfold"><code>char-set-unfold</code></a>
+        and <a href="#char-set-unfold!"><code>char-set-unfold!</code></a>.
+        The examples and sample implementation matched, as did many
+        independent implementations, but the order of the first two
+        arguments was reversed in the signature.)</li></ul></li>
   <li>Post-finalization notes:
     <ul>
       <li>
@@ -779,9 +787,9 @@ with
 ==== char-set-unfold char-set-unfold!
 ============================================================================-->
 <dt class="proc-def1" id="char-set-unfold">
-<code class="proc-def">char-set-unfold&nbsp;</code><var> f p g seed [base-cs] -&gt; char-set</var>
+<code class="proc-def">char-set-unfold&nbsp;</code><var> p f g seed [base-cs] -&gt; char-set</var>
 </dt>
-<dt class="proc-defn" id="char-set-unfold!"><code class="proc-def">char-set-unfold!</code><var> f p g seed base-cs -&gt; char-set</var>
+<dt class="proc-defn" id="char-set-unfold!"><code class="proc-def">char-set-unfold!</code><var> p f g seed base-cs -&gt; char-set</var>
 </dt>
 <dd class="proc-def">
 <p>
